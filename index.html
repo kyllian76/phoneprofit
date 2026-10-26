@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101114">
+<title>PhoneProfit — Gestion réparation-revente</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#f5f6f8;background:#101114;font-synthesis:none}
+*{box-sizing:border-box}body{margin:0;background:#101114;color:#f5f6f8}button,input,select,textarea{font:inherit}button{cursor:pointer}
+.app{max-width:1100px;margin:auto;padding:20px 16px 90px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px}.brand{display:flex;align-items:center;gap:10px}.logo{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:#b6f36b;color:#17200b;font-weight:900;font-size:22px}.brand h1{font-size:21px;margin:0}.brand p{margin:3px 0 0;color:#a2a5ae;font-size:12px}.primary{border:0;border-radius:12px;background:#b6f36b;color:#17200b;font-weight:750;padding:12px 15px}.secondary{border:1px solid #35373f;background:#202127;color:#f5f6f8;border-radius:10px;padding:9px 12px}.tabs{display:flex;gap:8px;overflow:auto;margin-bottom:22px;padding-bottom:3px}.tab{white-space:nowrap;background:#1a1b20;border:1px solid #30313a;color:#b8bac3;border-radius:11px;padding:10px 14px}.tab.active{background:#b6f36b;color:#17200b;border-color:#b6f36b;font-weight:750}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:22px}.stat,.panel{background:#191a1f;border:1px solid #2b2c34;border-radius:16px;padding:16px}.stat span{display:block;color:#a2a5ae;font-size:12px;margin-bottom:9px}.stat strong{font-size:clamp(19px,2.5vw,27px);letter-spacing:-.6px}.green{color:#b6f36b}.muted{color:#a2a5ae}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:24px 0 12px}.sectionhead h2{font-size:18px;margin:0}.filters{display:flex;gap:8px;flex-wrap:wrap}.filters input,.filters select,.field input,.field select,.field textarea{background:#101115;color:#f5f6f8;border:1px solid #373943;border-radius:10px;padding:11px;width:100%;outline:none}.filters input{max-width:260px}.list{display:grid;gap:10px}.phone{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px;background:#191a1f;border:1px solid #2b2c34;border-radius:14px}.phone-main{display:flex;align-items:center;gap:12px;min-width:0}.deviceicon{width:43px;height:52px;border:2px solid #777b86;border-radius:10px;display:grid;place-items:center;color:#b6f36b;flex-shrink:0;font-size:12px;font-weight:800}.phone h3{font-size:15px;margin:0 0 5px}.phone p{font-size:12px;color:#a2a5ae;margin:0;line-height:1.5}.phone-right{text-align:right;flex-shrink:0}.phone-right strong{display:block;margin-bottom:7px}.badge{display:inline-block;font-size:11px;border-radius:99px;padding:5px 8px;background:#2b2c34;color:#d5d7df}.badge.greenbg{background:#25351b;color:#c6f79a}.badge.bluebg{background:#1b2b3e;color:#9bceff}.actions{display:flex;gap:6px;margin-top:8px;justify-content:flex-end}.actions button{font-size:12px;padding:6px 8px}.empty{padding:32px 18px;text-align:center;color:#a2a5ae;background:#191a1f;border:1px dashed #373943;border-radius:14px}.hidden{display:none!important}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:7px;margin-bottom:13px}.field label{font-size:12px;color:#b8bac3}.field textarea{min-height:74px;resize:vertical}.form-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}.costline{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid #30313a;font-size:14px}.costline:last-child{border:0}.notice{color:#a2a5ae;font-size:12px;line-height:1.5;margin-top:18px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#b6f36b;color:#17200b;padding:12px 18px;border-radius:12px;font-weight:700;box-shadow:0 8px 30px #0008;z-index:10}.modal{position:fixed;inset:0;background:#000a;display:grid;place-items:center;padding:16px;z-index:5}.modalbox{width:min(650px,100%);max-height:90vh;overflow:auto;background:#191a1f;border:1px solid #373943;border-radius:18px;padding:20px}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.modalhead h2{font-size:19px;margin:0}.close{border:0;background:#2a2b31;color:white;border-radius:9px;padding:8px 11px}.footer{font-size:11px;color:#767985;text-align:center;margin-top:26px}
+@media(max-width:650px){.app{padding:16px 12px 85px}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.stat{padding:13px}.top{align-items:flex-start}.brand h1{font-size:19px}.top>.primary{padding:10px;font-size:13px}.grid2{grid-template-columns:1fr}.phone{align-items:flex-start}.phone-right strong{font-size:14px}.phone p{max-width:200px}.sectionhead{align-items:flex-start;flex-direction:column}.filters{width:100%}.filters input{max-width:none;flex:1}.phone-right .actions{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+  <div class="brand"><div class="logo">P</div><div><h1>PhoneProfit</h1><p>Réparation · Stock · Revente</p></div></div>
+  <button class="primary" id="addBtn">＋ Ajouter</button>
+</header>
+<nav class="tabs" aria-label="Navigation">
+<button class="tab active" data-view="dashboard">Vue d'ensemble</button><button class="tab" data-view="stock">Mon stock</button><button class="tab" data-view="sold">Vendus</button>
+</nav>
+<section id="dashboard">
+  <div class="stats">
+    <div class="stat"><span>Investi dans le stock</span><strong id="invested">0 €</strong></div>
+    <div class="stat"><span>Bénéfice réalisé</span><strong class="green" id="profit">0 €</strong></div>
+    <div class="stat"><span>Téléphones en stock</span><strong id="stockCount">0</strong></div>
+    <div class="stat"><span>En réparation</span><strong id="repairCount">0</strong></div>
+  </div>
+  <div class="sectionhead"><h2>Derniers téléphones</h2><button class="secondary" id="allStock">Voir le stock →</button></div>
+  <div class="list" id="recentList"></div>
+  <p class="notice">Prototype : les informations sont enregistrées dans le navigateur de cet appareil. Pense à exporter régulièrement une sauvegarde. Elles ne se synchronisent pas automatiquement avec un autre appareil.</p>
+</section>
+<section id="stock" class="hidden">
+  <div class="sectionhead"><h2>Mon stock</h2><div class="filters"><input id="search" placeholder="Rechercher un téléphone…"><select id="statusFilter"><option value="">Tous les statuts</option><option>À réparer</option><option>En réparation</option><option>Prêt à vendre</option><option>En vente</option></select></div></div>
+  <div class="list" id="stockList"></div>
+</section>
+<section id="sold" class="hidden">
+  <div class="sectionhead"><h2>Historique des ventes</h2><button class="secondary" id="exportBtn">Exporter CSV</button></div>
+  <div class="stats"><div class="stat"><span>Ventes réalisées</span><strong id="salesCount">0</strong></div><div class="stat"><span>Chiffre d'affaires</span><strong id="revenue">0 €</strong></div><div class="stat"><span>Bénéfice cumulé</span><strong class="green" id="soldProfit">0 €</strong></div><div class="stat"><span>Bénéfice moyen</span><strong id="average">0 €</strong></div></div>
+  <div class="list" id="soldList"></div>
+</section>
+<div class="footer">PhoneProfit · Maquette personnelle — version de test</div>
+</div>
+<div id="modal" class="modal hidden"><div class="modalbox"><div class="modalhead"><h2 id="modalTitle">Ajouter un téléphone</h2><button class="close" id="closeModal">✕</button></div><form id="phoneForm">
+<input type="hidden" id="phoneId">
+<div class="grid2"><div class="field"><label for="model">Modèle *</label><input id="model" required placeholder="iPhone 13"></div><div class="field"><label for="variant">Couleur / stockage</label><input id="variant" placeholder="Midnight · 128 Go"></div></div>
+<div class="grid2"><div class="field"><label for="purchase">Prix d'achat (€) *</label><input id="purchase" type="number" min="0" step=".01" required placeholder="110"></div><div class="field"><label for="buyDate">Date d'achat</label><input id="buyDate" type="date"></div></div>
+<div class="field"><label for="condition">Panne / état initial</label><input id="condition" placeholder="Écran cassé, vitre arrière…"></div>
+<div class="field"><label for="status">Statut</label><select id="status"><option>À réparer</option><option>En réparation</option><option>Prêt à vendre</option><option>En vente</option><option>Vendu</option></select></div>
+<div class="sectionhead"><h2 style="font-size:15px">Pièces et dépenses</h2><button type="button" class="secondary" id="addCost">＋ Ajouter une dépense</button></div>
+<div id="costFields"></div>
+<div class="grid2"><div class="field"><label for="salePrice">Prix de revente (€)</label><input id="salePrice" type="number" min="0" step=".01" placeholder="250"></div><div class="field"><label for="saleFees">Frais de vente / envoi (€)</label><input id="saleFees" type="number" min="0" step=".01" placeholder="0"></div></div>
+<div class="field"><label for="notes">Notes</label><textarea id="notes" placeholder="Fournisseur, référence de pièce, détails…"></textarea></div>
+<div class="panel"><div class="costline"><span>Coût total (achat + dépenses)</span><strong id="formTotal">0,00 €</strong></div><div class="costline"><span>Bénéfice estimé après frais</span><strong class="green" id="formProfit">0,00 €</strong></div></div>
+<div class="form-actions"><button type="button" class="secondary" id="cancelForm">Annuler</button><button type="submit" class="primary">Enregistrer</button></div>
+</form></div></div>
+<div id="toast" class="toast hidden"></div>
+<script>
+const $=id=>document.getElementById(id);
+const money=n=>new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR'}).format(Number(n)||0);
+const today=()=>new Date().toISOString().slice(0,10);
+let phones=JSON.parse(localStorage.getItem('phoneprofit_v1')||'[]');
+if(!phones.length){phones=[{id:crypto.randomUUID(),model:'iPhone 13',variant:'Midnight · 128 Go',purchase:110,buyDate:today(),condition:'Réparation écran et vitre arrière',status:'Prêt à vendre',costs:[{name:'Vitre arrière',amount:7.09},{name:"Joint d’étanchéité",amount:2.86},{name:'Écran',amount:51.8}],salePrice:250,saleFees:0,notes:'Fournisseurs possibles : Mobilax, MYPART, Pieces2mobile, M-Electronique et Horepa',saleDate:''}];save();}
+function save(){localStorage.setItem('phoneprofit_v1',JSON.stringify(phones));render();}
+function costTotal(p){return Number(p.purchase||0)+(p.costs||[]).reduce((s,c)=>s+Number(c.amount||0),0)}
+function gain(p){return Number(p.salePrice||0)-costTotal(p)-Number(p.saleFees||0)}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function statusClass(s){return s==='Prêt à vendre'||s==='En vente'?'greenbg':s==='En réparation'?'bluebg':''}
+function card(p){return `<article class="phone"><div class="phone-main"><div class="deviceicon">IP</div><div><h3>${esc(p.model)} ${p.variant?'· '+esc(p.variant):''}</h3><p>Achat : ${money(p.purchase)} · Dépenses : ${money(costTotal(p)-Number(p.purchase||0))}<br><span class="badge ${statusClass(p.status)}">${esc(p.status)}</span></p></div></div><div class="phone-right"><strong class="${p.status==='Vendu'?'green':''}">${p.status==='Vendu'?'Bénéfice : '+money(gain(p)):'Coût : '+money(costTotal(p))}</strong><div class="actions"><button class="secondary" onclick="editPhone('${p.id}')">Modifier</button>${p.status!=='Vendu'?`<button class="secondary" onclick="sellPhone('${p.id}')">Vendre</button>`:''}</div></div></article>`}
+function render(){
+const active=phones.filter(p=>p.status!=='Vendu'),sold=phones.filter(p=>p.status==='Vendu');
+$('invested').textContent=money(active.reduce((s,p)=>s+costTotal(p),0));$('profit').textContent=money(sold.reduce((s,p)=>s+gain(p),0));$('stockCount').textContent=active.length;$('repairCount').textContent=active.filter(p=>p.status==='À réparer'||p.status==='En réparation').length;
+$('recentList').innerHTML=(phones.slice().reverse().slice(0,3).map(card).join(''))||'<div class="empty">Aucun téléphone pour le moment. Ajoute ton premier appareil.</div>';
+const q=($('search')?.value||'').toLowerCase(),f=$('statusFilter')?.value||'';
+$('stockList').innerHTML=active.filter(p=>(p.model+' '+p.variant).toLowerCase().includes(q)&&(!f||p.status===f)).map(card).join('')||'<div class="empty">Aucun téléphone ne correspond à cette recherche.</div>';
+$('soldList').innerHTML=sold.slice().reverse().map(card).join('')||'<div class="empty">Tes téléphones vendus apparaîtront ici.</div>';
+$('salesCount').textContent=sold.length;$('revenue').textContent=money(sold.reduce((s,p)=>s+Number(p.salePrice||0),0));$('soldProfit').textContent=money(sold.reduce((s,p)=>s+gain(p),0));$('average').textContent=money(sold.length?sold.reduce((s,p)=>s+gain(p),0)/sold.length:0);
+}
+function showView(v){document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===v));['dashboard','stock','sold'].forEach(id=>$(id).classList.toggle('hidden',id!==v));}
+document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>showView(b.dataset.view));$('allStock').onclick=()=>showView('stock');$('search').oninput=render;$('statusFilter').onchange=render;
+function addCostRow(name='',amount=''){const row=document.createElement('div');row.className='grid2 cost-row';row.innerHTML=`<div class="field"><label>Nom de la pièce / dépense</label><input class="cost-name" value="${esc(name)}" placeholder="Écran, batterie…"></div><div class="field"><label>Montant (€) <button type="button" class="close remove-cost" style="float:right;padding:2px 7px">Retirer</button></label><input class="cost-amount" type="number" min="0" step=".01" value="${amount}" placeholder="0,00"></div>`;$('costFields').appendChild(row);row.querySelectorAll('input').forEach(i=>i.oninput=calcForm);row.querySelector('.remove-cost').onclick=()=>{row.remove();calcForm()}}
+$('addCost').onclick=()=>addCostRow();function calcForm(){let total=Number($('purchase').value||0);document.querySelectorAll('.cost-row').forEach(r=>total+=Number(r.querySelector('.cost-amount').value||0));$('formTotal').textContent=money(total);$('formProfit').textContent=money(Number($('salePrice').value||0)-total-Number($('saleFees').value||0))}
+['purchase','salePrice','saleFees'].forEach(id=>$(id).oninput=calcForm);
+function openForm(p=null){$('phoneForm').reset();$('phoneId').value=p?.id||'';$('modalTitle').textContent=p?'Modifier le téléphone':'Ajouter un téléphone';$('costFields').innerHTML='';$('buyDate').value=p?.buyDate||today();$('model').value=p?.model||'';$('variant').value=p?.variant||'';$('purchase').value=p?.purchase??'';$('condition').value=p?.condition||'';$('status').value=p?.status||'À réparer';$('salePrice').value=p?.salePrice||'';$('saleFees').value=p?.saleFees||'';$('notes').value=p?.notes||'';(p?.costs?.length?p.costs:[{name:'',amount:''}]).forEach(c=>addCostRow(c.name,c.amount));$('modal').classList.remove('hidden');calcForm()}
+function closeForm(){$('modal').classList.add('hidden')}
+$('addBtn').onclick=()=>openForm();$('closeModal').onclick=closeForm;$('cancelForm').onclick=closeForm;$('modal').onclick=e=>{if(e.target===$('modal'))closeForm()};
+window.editPhone=id=>openForm(phones.find(p=>p.id===id));
+window.sellPhone=id=>{const p=phones.find(p=>p.id===id);if(!p)return;if(!p.salePrice){openForm(p);$('status').value='Vendu';$('modalTitle').textContent='Finaliser la vente';return}p.status='Vendu';p.saleDate=today();save();toast('Téléphone marqué comme vendu')};
+$('phoneForm').onsubmit=e=>{e.preventDefault();const costs=[...document.querySelectorAll('.cost-row')].map(r=>({name:r.querySelector('.cost-name').value.trim()||'Dépense',amount:Number(r.querySelector('.cost-amount').value||0)})).filter(c=>c.name||c.amount);const id=$('phoneId').value;const old=phones.find(p=>p.id===id);const p={id:id||crypto.randomUUID(),model:$('model').value.trim(),variant:$('variant').value.trim(),purchase:Number($('purchase').value),buyDate:$('buyDate').value,condition:$('condition').value.trim(),status:$('status').value,costs,salePrice:Number($('salePrice').value||0),saleFees:Number($('saleFees').value||0),notes:$('notes').value.trim(),saleDate:$('status').value==='Vendu'?(old?.saleDate||today()):''};if(old)phones=phones.map(x=>x.id===id?p:x);else phones.push(p);closeForm();save();toast('Téléphone enregistré')};
+function toast(s){$('toast').textContent=s;$('toast').classList.remove('hidden');setTimeout(()=>$('toast').classList.add('hidden'),2200)}
+$('exportBtn').onclick=()=>{const rows=[['Modèle','Variante','Date achat','Statut','Prix achat','Dépenses pièces','Coût total','Prix vente','Frais vente','Bénéfice','Notes'],...phones.map(p=>[p.model,p.variant,p.buyDate,p.status,p.purchase,(p.costs||[]).reduce((s,c)=>s+Number(c.amount||0),0),costTotal(p),p.salePrice,p.saleFees,gain(p),p.notes])];const csv=rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(';')).join('\r\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'}));a.download='phoneprofit-export.csv';a.click();URL.revokeObjectURL(a.href)};
+render();
+</script>
+</body></html>
